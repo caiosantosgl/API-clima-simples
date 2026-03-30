@@ -14,7 +14,7 @@ const windElement = document.querySelector("#wind span")
 
 //Funções
 const getCidade = async(city) => {
-    const apiCityURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=pt&format=json`
+    const apiCityURL = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=pt&format=json`
     const res = await fetch(apiCityURL)
     const data = await res.json()
 
